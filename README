@@ -1,0 +1,28 @@
+Goal:
+
+   Provide a web app to link together people who have ideas and people who doesn't.
+   Most like Google Summer of Code than real job.
+
+Way:
+
+   - Have a web site
+   - Search for existing ideas
+   - Search for ideas already implemented
+   - add an idea
+   - set some capabilities and availabilities
+   - Describe methods and share experience about join an existing project or create his own
+
+Tech:
+
+   - Node.js/Scala
+   - MongoDB/CouchDB
+   - Nginx
+   - Want to play with full static site and REST APIs
+   - HTML5
+   - Connected with source control sites
+   - Load LinkedIn like profiles
+
+First:
+
+   - Have a site
+   - Implement adding an idea
