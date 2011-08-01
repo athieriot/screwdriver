@@ -7,18 +7,17 @@ var mrouter = new (journey.Router)();
 mrouter.map(function () {
    //Default URL
    this.root.bind(function (req, res) {
-      res.send("Welcome to my application")
+      res.send("Welcome to Screwdriver server");
    });
   
-   //GET request on /databases
-   this.get('/databases').bind(function (req, res) {
-      res.send('it work')
-      //do something
+   //GET request on /ideas
+   this.get('/ideas').bind(function (req, res) {
+      res.send('Display all ideas');
    });
    
    //GET request on a specific database - /database/users21
-   this.get(/^databases\/([A-Za-z0-9_]+)$/).bind(function (req, res, id) {
-      //id contains 'user21' part
+   this.get(/^idea\/([0-9_]+)$/).bind(function (req, res, id) {
+      res.send("Display idea with id : " + id);
    });
       
    /**PUT request example. 
@@ -26,8 +25,8 @@ mrouter.map(function () {
    * Here is an example to update a document on a collection on MongoDB database. 
    * We have 3 user parameters - 6 parameters in URL:
    **/
-   this.put(/^databases\/([A-Za-z0-9_]+)\/collections+\/([A-Za-z0-9_]+)\/documents+\/([A-Za-z0-9_]+)$/).bind(function (req, res, dbid, collid, docid, data) {
-      res.send('URLpdate '+docid+ 'in '+collid + 'on: '+ dbid);
+   this.put(/^idea\/([A-Za-z0-9_]+)$/).bind(function (req, res, id, data) {
+      res.send('Update the idea : ' + id + ' with the data : ' + data);
    });
 }); //end mapping
 
