@@ -16,10 +16,10 @@
   , "engine": { "node": ">= 0.4.10"}
   , "dependencies": {
        "express": ">= 2.4.4"
+    ,  "expresso": ">= 0.8.1"
     ,  "express-mongoose": ">= 0.0.2"
     ,  "socket.io": ">= 0.7.8"
     ,  "mongoose": ">= 1.0"
     ,  "winston": ">= 0.3.5"
-    ,  "nodeunit": ">= 0.5.3"
   }
 }

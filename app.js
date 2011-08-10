@@ -30,28 +30,28 @@ app.configure('production', function(){
 
 // Routes
 // GET
-app.get('/', function(req, res){
+app.get('/', function(request, response){
    res.json(screwcore.greeting());
 });
 
-app.get('/ideas', function(req, res) {
+app.get('/ideas', function(request, response) {
    screwcore.ideas(function(error, ideas) {
       error ? res.json(error, error.status) : res.json(ideas, 200);
    });
 });
 
-app.get('/idea/:id([0-9]+)', function (req, res) {
+app.get('/idea/:id([0-9]+)', function (request, response) {
    res.json('Display idea with id : ' + req.params.id);
 });
 
 // PUT
-app.put('/idea/:id([0-9]+)', function (req, res) {
+app.put('/idea/:id([0-9]+)', function (request, response) {
    res.json('Update the idea : ' + req.params.id + ' with the data : ' + req.body);
 });
 
 // POST
-app.post('/idea', function (req, res) {
-   screwcore.add(req.body.title || '', req.body.data || '', function(error) {
+app.post('/idea', function (request, response) {
+   screwcore.push(req.body.title || '', req.body.data || '', function(error) {
       error && winston.info('Error on creating an idea. ' + error);
    });
 
