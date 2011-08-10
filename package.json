@@ -2,8 +2,24 @@
     "name": "screwdriver"
   , "version": "0.0.1"
   , "private": true
+  , "contributors": [
+    { "name": "Aurélien Thieriot", "email": "a.thieriot@gmail.com" }
+  ]
+  , "directories": {
+      "lib": "./lib/"
+    , "test": "./test/"
+  }
+  , "scripts": {
+      "start": "./app.js"
+  }
+  , "main": "./app.js"
+  , "engine": { "node": ">= 0.4.10"}
   , "dependencies": {
-      "express": "2.4.3"
-    , "jade": ">= 0.0.1"
+       "express": ">= 2.4.4"
+    ,  "express-mongoose": ">= 0.0.2"
+    ,  "socket.io": ">= 0.7.8"
+    ,  "mongoose": ">= 1.0"
+    ,  "winston": ">= 0.3.5"
+    ,  "nodeunit": ">= 0.5.3"
   }
 }

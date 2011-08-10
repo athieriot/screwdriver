@@ -14,10 +14,10 @@ Way:
 
 Tech:
 
-   - Node.js/Scala
-   - MongoDB/CouchDB
+   - Node.js
+   - MongoDB
    - Nginx
-   - Want to play with full static site and REST APIs
+   - Want to play with full static site and REST APIs/Websockets
    - HTML5
    - Connected with source control sites
    - Load LinkedIn like profiles
