@@ -4,8 +4,8 @@ var settings = require('settings').Settings;
 var Schema = mongoose.Schema, ObjectId = Schema.ObjectId;
 
 var Ideas = mongoose.model('Ideas', new Schema({
-   title:   String,   
-   data:    String
+   title:      String,   
+   message:    String
 }));
 
 function greeting() {
@@ -16,10 +16,10 @@ function connect() {
    mongoose.connect('mongodb://' + settings.mongo.host + '/' + settings.mongo.db_name);
 }
 
-function push(title, data, errorCallback) {
+function push(title, message, errorCallback) {
    var newIdea = new Ideas();
    newIdea.title = title;
-   newIdea.data = data;
+   newIdea.message = message;
 
    newIdea.save(errorCallback);
 }

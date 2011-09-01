@@ -45,12 +45,12 @@ app.get('/idea/:id([0-9a-zA-Z]+)', function (request, response) {
 
 // PUT
 app.put('/idea/:id([0-9a-zA-Z]+)', function (request, response) {
-   response.json('Update the idea : ' + request.params.id + ' with the data : ' + request.body);
+   response.json('Update the idea : ' + request.params.id + ' with the message : ' + request.body);
 });
 
 // POST
 app.post('/idea', function (request, response) {
-   screwcore.push(request.body.title || '', request.body.data || '', function(error) {
+   screwcore.push(request.body.title || '', request.body.message || '', function(error) {
       error && winston.info('Error on creating an idea. ' + error);
    });
 
@@ -62,4 +62,4 @@ app.post('/idea', function (request, response) {
 screwcore.connect();
 
 app.listen(3000);
-console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+winston.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

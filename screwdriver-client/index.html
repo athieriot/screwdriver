@@ -12,42 +12,46 @@
 	<meta name="author" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link href="css/style.css" rel="stylesheet">
+	<!--link href="css/style.css" rel="stylesheet"-->
         <link href="css/aristo/jquery-ui-1.8.7.custom.css" rel="stylesheet">
+        <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.1.1.min.css">
 
         <!-- Main js script loaded with require JS -->
         <script data-main="js/main.js" src="js/libs/require-0.25.0.min.js"></script>
         <script src="js/respond.js"></script>
 </head>
 <body>
-	<!--<div id="header-container">
-		<header class="wrapper">
-			<h1 id="title">Your title</h1>
-			<nav>
-				<ul>
-					<li><a href="#">Some</a></li>
-					<li><a href="#">navigation</a></li>
-					<li><a href="#">links</a></li>
-				</ul>
-                        </nav>
-		</header>
-        </div>-->
-        <div id="main" class="wrapper">
-           <div>
-              <input id="idea-title" /> <br/>
-             <input id="idea-message" />
-           </div>
-           <div id="idea-save">Save</div>
-	</div>
-	<!--<div id="footer-container">
-		<footer class="wrapper">
-			<h3>A nice footer</h3>
-                </footer>
-        </div>-->
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+   <div class="container-fluid">
+      <aside class="sidebar">
+         <div>
+           <button id="idea-check" class="btn small action" type="submit">Check</button>
+         </div>
+         
+         <ul id="idea-list">
+         </ul>
+      </aside>
+      <div class="content">
+         <form id="idea-form">
+            <div class="clearfix">
+               <label for="idea-title">Title</label>
+               <div class="input">
+                  <input id="idea-title" type="text" size="30" name="idea.title">
+               </div>
+            </div>
 
+            <div class="clearfix">
+               <label for="idea-message">Message</label>
+               <div class="input">
+                  <input id="idea-message" type="text" size="30" name="idea.message">
+               </div>
+            </div>
+            <div class="actions">
+               <button id="idea-save" class="btn small action" type="submit">Save</button>
+            </div>
+         </form>
+      </div>
+   </div>
 <script>
 	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
 	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
