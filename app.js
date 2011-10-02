@@ -1,14 +1,13 @@
-require.paths.unshift('./lib');
-
 var express = require('express');
 var winston = require('winston');
-var screwcore = require('screwcore');
+var screwcore = require('./lib/screwcore');
+var settings = require('./lib/settings').Settings;
 
 var app = module.exports = express.createServer();
 
 // Configuration
 
-app.configure(function(){
+app.configure(function() {
    app.use(express.logger());
    app.use(express.bodyParser());
    app.use(express.favicon());
@@ -61,5 +60,5 @@ app.post('/idea', function (request, response) {
 
 screwcore.connect();
 
-app.listen(3000);
+app.listen(process.env.C9_PORT || 3000);
 winston.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

@@ -3,7 +3,7 @@ require(["order!libs/jquery-1.6.2.min",
          "order!libs/modernizr-2.0.min",
          "order!libs/jquery-ui-1.8.15.custom.min"], function() {
    $(document).ready(function() {
-      var url = "http://localhost/node";
+      var url = "";
 
       $("#idea-check").click(function() {
          $.ajax({
