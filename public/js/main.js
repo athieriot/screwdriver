@@ -18,18 +18,18 @@ require(["order!libs/jquery-1.6.2.min",
             }
          });
       });
-/*
-      $("#idea-save").click(function() {
+
+      $("#fullText-save").click(function() {
          $.ajax({
 	    type: "POST",
-	    url: url + "/idea",
+	    url: url + "/fullText",
 	    dataType: 'json',
-	    data: {title: $("#idea-title").val(), message: $("#idea-message").val()},
+	    data: {title: $("#fullText-title").val(), fullText: $("#fullText-fullText").val(), source: $("#fullText-source").val()},
 	    success: function(msg) {
                alert( "Data Saved: " + msg );
             }
 	});
-*/
+
          return false;
       });
    });
