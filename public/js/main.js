@@ -5,20 +5,20 @@ require(["order!libs/jquery-1.6.2.min",
    $(document).ready(function() {
       var url = "";
 
-      $("#idea-check").click(function() {
+      $("#fullText-check").click(function() {
          $.ajax({
             type: "GET",
-            url: url + "/ideas",
+            url: url + "/fullTexts",
             dataType: 'json',
-            success: function(ideas) {
-               $("#idea-list").append(ideas[0].title + " " + ideas[0].message);
+            success: function(fullTexts) {
+               $("#fullText-list").append(fullTexts[0].title + " " + fullTexts[0].fullText);
             },
             error: function() {
-               $("1idea-list").html("plop");
+               $("fullText-list").html("error");
             }
          });
       });
-
+/*
       $("#idea-save").click(function() {
          $.ajax({
 	    type: "POST",
@@ -29,7 +29,7 @@ require(["order!libs/jquery-1.6.2.min",
                alert( "Data Saved: " + msg );
             }
 	});
-
+*/
          return false;
       });
    });

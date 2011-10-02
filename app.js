@@ -2,6 +2,7 @@ var express = require('express');
 var winston = require('winston');
 
 var settings = require('./lib/settings').Settings;
+
 var screwtrollers = require('./lib/screwtrollers');
 var screwcore = require('./lib/screwcore');
 
@@ -27,12 +28,7 @@ app.configure('production', function(){
 });
 
 // Routes
-screwtrollers.gets(app);
-screwtrollers.puts(app);
-screwtrollers.posts(app);
-
-// Start
-screwcore.connect();
+screwtrollers.start(app);
 
 app.listen(process.env.C9_PORT || 3000);
 winston.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
