@@ -13,7 +13,14 @@ Goal:
 
 Rules:
 
-   Don't know yet
+   - I think about plateform game or music game in wich the speed increase as you type.
+   - Some diagrams to display, or a bonhomme.
+   - Maybe, I can first try to make two or three lists of words. The first will be a complete text that create the floor and move forward the bonhomme.
+   - There is, also, a list of words that make the dude jump and grab some bonuses.
+   - An error wound the guy and you activate the bonus in tape words of the third list.
+   - We can think of combo that accelarate the course of the man
+
+   - OK ! Let's try that !
 
 Tech:
 
@@ -22,6 +29,7 @@ Tech:
    - Nginx (maybe)
    - Want to play with socket.io
    - HTML5
+   - Raphaël JS?
 
 First:
 
