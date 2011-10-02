@@ -1,29 +1,30 @@
 Goal:
 
-   Provide a web app to link together people who have ideas and people who doesn't.
-   Most like Google Summer of Code than real job.
+   Ah, bullshit. Screwdriver is my excuse to learn some new technologies !
+   So the purpose will evolve and that's it ;)
 
-Way:
+   Today, at the menu, I try to learn Bépo keyboard layout and I fall in love with games like ZType.
 
-   - Have a web site
-   - Search for existing ideas
-   - Search for ideas already implemented
-   - add an idea
-   - set some capabilities and availabilities
-   - Describe methods and share experience about join an existing project or create his own
+   Let's write a game !
+
+   In the past. Another idea : 
+   --Provide a web app to link together people who have ideas and people who doesn't.--
+   --Most like Google Summer of Code than real job.--
+
+Rules:
+
+   Don't know yet
 
 Tech:
 
    - Node.js
    - MongoDB
-   - Nginx
-   - Want to play with full static site and REST APIs/Websockets
+   - Nginx (maybe)
+   - Want to play with socket.io
    - HTML5
-   - Connected with source control sites
-   - Load LinkedIn like profiles
 
 First:
 
-   - Have a site
-   - Implement adding an idea
+   - Text writing
+   - Get metrics
    - Don't forget unit tests
