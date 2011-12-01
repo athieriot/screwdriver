@@ -3,36 +3,29 @@ Goal:
    Ah, bullshit. Screwdriver is my excuse to learn some new technologies !
    So the purpose will evolve and that's it ;)
 
-   Today, at the menu, I try to learn Bépo keyboard layout and I fall in love with games like ZType.
+   Get back on the "no idea" concept.
 
    Let's write a game !
 
    In the past. Another idea : 
+   --Today, at the menu, I try to learn Bépo keyboard layout and I fall in love with games like ZType.--
    --Provide a web app to link together people who have ideas and people who doesn't.--
    --Most like Google Summer of Code than real job.--
 
 Rules:
 
-   - I think about plateform game or music game in wich the speed increase as you type.
-   - Some diagrams to display, or a bonhomme.
-   - Maybe, I can first try to make two or three lists of words. The first will be a complete text that create the floor and move forward the bonhomme.
-   - There is, also, a list of words that make the dude jump and grab some bonuses.
-   - An error wound the guy and you activate the bonus in tape words of the third list.
-   - We can think of combo that accelarate the course of the man
-
-   - OK ! Let's try that !
+   - Don't know yet. 
+   - A research field that find keywords in github++ 
+   - Save the historic of research and give possibility to people to help
+   - Help to create a project on some plateforms
 
 Tech:
 
-   - Node.js
-   - MongoDB
-   - Nginx (maybe)
-   - Want to play with socket.io
+   - Play 2.0
+   - MongoDB/Lucene
+   - Nginx
    - HTML5
-   - Raphaël JS?
 
 First:
 
-   - Text writing
-   - Get metrics
-   - Don't forget unit tests
+   - Using Github API v3 to find projects

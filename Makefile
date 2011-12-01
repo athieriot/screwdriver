@@ -1,7 +1,0 @@
-TEST_TOOL=expresso
-TEST_PATH=test/**/*
-TEST_OPTION=-I $(UNSHIFT_LIBRARY) --cov
-UNSHIFT_LIBRARY=lib
-
-cov:
-	$(TEST_TOOL) $(TEST_OPTION) $(TEST_PATH)
