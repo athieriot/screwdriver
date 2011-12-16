@@ -5,8 +5,6 @@ Goal:
 
    Get back on the "no idea" concept.
 
-   Let's write a game !
-
    In the past. Another idea : 
    --Today, at the menu, I try to learn Bépo keyboard layout and I fall in love with games like ZType.--
    --Provide a web app to link together people who have ideas and people who doesn't.--
@@ -14,18 +12,21 @@ Goal:
 
 Rules:
 
-   - Don't know yet. 
-   - A research field that find keywords in github++ 
-   - Save the historic of research and give possibility to people to help
-   - Help to create a project on some plateforms
+   - The idea to help create project is good but I wanted to help writing code
+   - Why not be able to add some issues/bugs/ideas and give a note
+   - The note has to be about complexity
+
+   - Like that, anyone can see if he can help
+   - Or if is project will be challenging
 
 Tech:
 
    - Play 2.0
+   - Twitter bootstrap
    - MongoDB/Lucene
    - Nginx
    - HTML5
 
 First:
 
-   - Using Github API v3 to find projects
+   - Using Github API v3 to find issues
