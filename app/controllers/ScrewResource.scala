@@ -1,6 +1,7 @@
 package controllers
 
 import play.api.mvc._
+import util.parsing.json.JSON
 
 /**
  * Created by IntelliJ IDEA.
@@ -11,7 +12,9 @@ import play.api.mvc._
 
 object ScrewResource extends Controller {
 
-  def list = Action {NotImplemented}
+  def list = Action {
+    NotImplemented
+  }
 
   def add = Action {NotImplemented}
 
