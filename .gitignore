@@ -2,5 +2,7 @@
 node_modules/
 lib-cov/
 *.log
+logs/
 target/
 .idea/
+.idea_modules/
