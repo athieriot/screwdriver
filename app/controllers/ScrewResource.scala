@@ -1,7 +1,7 @@
 package controllers
 
 import play.api.mvc._
-import util.parsing.json.JSON
+import play.libs.Json
 
 /**
  * Created by IntelliJ IDEA.
@@ -12,8 +12,10 @@ import util.parsing.json.JSON
 
 object ScrewResource extends Controller {
 
+  private val ScrewCollection = DBMongo.getConnection()("screws")
+
   def list = Action {
-    NotImplemented
+    Ok(ScrewCollection.find().toList.toString)
   }
 
   def add = Action {NotImplemented}
