@@ -24,10 +24,10 @@ object DBMongo {
     MongoConnection(host, port)(base)
   }
 
-  def getConnection(): MongoDB = connection
+  def getConnection() = connection
   
   def withConnection[A](collection: String)(block: MongoCollection => A): A = {
     Logger.info("Access to the " + collection + " collection")
-    block(getConnection()(collection))
+    block(connection(collection))
   }
 }

@@ -2,6 +2,7 @@ package controllers
 
 import play.api.mvc._
 import models.Screw
+import org.bson.types.ObjectId
 
 /**
  * Created by IntelliJ IDEA.
@@ -13,11 +14,11 @@ import models.Screw
 object ScrewResource extends Controller {
 
   def list = Action {
-    Ok(Screw.all().toString)
+    Ok(Screw.count().toString)
   }
 
   def add = Action {
-    Screw.save(Screw("Ouh","hou","ou"))
+    Screw.insert(Screw(new ObjectId, "Ouh","hou","ou"))
 
     Ok("ok")
   }

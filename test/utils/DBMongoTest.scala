@@ -4,6 +4,7 @@ import org.specs2.mutable._
 import play.api.test.MockApplication._
 import utils.DBMongo._
 import com.mongodb.casbah.{MongoCollection, MongoDB}
+import org.specs2.specification.AfterExample
 
 /**
  * Created by IntelliJ IDEA.

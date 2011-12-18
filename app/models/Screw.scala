@@ -1,7 +1,10 @@
 package models
 
-import com.mongodb.casbah.commons.MongoDBObject
-import com.mongodb.DBObject
+import org.bson.types.ObjectId
+import utils.DBMongo
+import models.play_salat_context._
+
+import com.novus.salat.dao._
 
 /**
  * Created by IntelliJ IDEA.
@@ -11,6 +14,8 @@ import com.mongodb.DBObject
  */
 
 case class Screw (
+  _id: ObjectId = new ObjectId,
+
   title: String,
 
   link: String,
@@ -18,18 +23,4 @@ case class Screw (
   details: String
 )
 
-object Screw extends MongoModel[Screw] {
-
-  def getCollectionName() = "screws"
-
-  implicit def Model2DBObject(x: Screw) = {
-
-    val builder = MongoDBObject.newBuilder
-
-    builder += "title" -> x.title
-    builder += "link" -> x.link
-    builder += "details" -> x.details
-
-    builder.result
-  }
-}
+object Screw extends SalatDAO[Screw, ObjectId](collection = DBMongo.getConnection()("screws"))
