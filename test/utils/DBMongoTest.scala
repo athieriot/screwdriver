@@ -19,11 +19,6 @@ object DBMongoTest extends Specification {
         getConnection() should anInstanceOf[MongoDB]
       }
     }
-    "return only one connection" in {
-      withApplication(Nil, Map.empty) {
-        getConnection() should be equalTo getConnection()
-      }
-    }
   }
 
   "DBMongo withConnection" should {

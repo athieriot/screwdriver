@@ -1,6 +1,7 @@
 package models
 
 import com.mongodb.casbah.commons.MongoDBObject
+import com.mongodb.DBObject
 
 /**
  * Created by IntelliJ IDEA.
@@ -17,7 +18,7 @@ case class Screw (
   details: String
 )
 
-object Screw extends MongoModel {
+object Screw extends MongoModel[Screw] {
 
   def getCollectionName() = "screws"
 

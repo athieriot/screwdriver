@@ -10,15 +10,15 @@ import com.mongodb.DBObject
  * Time: 10:13
  */
 
-trait MongoModel {
+trait MongoModel[T] {
 
   def getCollectionName(): String
 
-  implicit def Model2DBObject(x: Screw): DBObject
+  implicit def Model2DBObject(x: T): DBObject
 
   def all() = {
     withConnection(getCollectionName()) { collection =>
-      collection.find()
+      collection.find().toList
     }
   }
 
