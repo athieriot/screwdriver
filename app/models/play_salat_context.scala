@@ -3,6 +3,7 @@ package models
 import com.novus.salat._
 import play.Play
 
+
 /**
  * Created by IntelliJ IDEA.
  * User: aurelien

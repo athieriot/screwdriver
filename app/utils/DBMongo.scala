@@ -19,15 +19,13 @@ object DBMongo {
   val host = configuration.getString("mongodb.host").getOrElse("127.0.0.1")
   val port = configuration.getInt("mongodb.port").getOrElse(27017)
 
-  val connection = {
+  def getConnection() = {
     Logger.info("Connection to mongodb instance at " + host + ":" + port + " and to base " + base)
     MongoConnection(host, port)(base)
   }
-
-  def getConnection() = connection
   
   def withConnection[A](collection: String)(block: MongoCollection => A): A = {
     Logger.info("Access to the " + collection + " collection")
-    block(connection(collection))
+    block(getConnection()(collection))
   }
 }
