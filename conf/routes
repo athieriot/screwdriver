@@ -5,8 +5,9 @@
 # Home page
 GET     /                           controllers.Application.index()
 
-# API
+# Screw API
 GET     /screw                      controllers.ScrewResource.list()
+GET     /screw/search/:term         controllers.ScrewResource.search(term: String)
 POST    /screw                      controllers.ScrewResource.add()
 DELETE  /screw                      controllers.ScrewResource.delete()
 
