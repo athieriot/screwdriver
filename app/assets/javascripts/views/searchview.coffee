@@ -1,35 +1,33 @@
-define ['models/screws', \
-        'text!templates/screw.html', \
+define ['text!templates/repo.html', \
         'lib/backbone', \
         'lib/handlebars', \
-        'lib/jquery.better-autocomplete'], (Screws, screw) ->
+        'lib/jquery.better-autocomplete'], (repo) ->
            Backbone.View.extend
               el: $('#search')
-              collection: new Screws
               
               initialize: ->
                  _.bindAll @, 'render', 'initsearch'
-                 @initsearch()
-                 @render()
+                 @initsearch(@render)
               
-              render: ->
-                 template = Handlebars.compile(screw)
-                 content = template(@collection.models)
+              render: (result) ->
+                 template = Handlebars.compile(repo)
+                 content = template(result)
                  
-                 $(@el.id + ', #screw-results').html(content)
+                 $(@el.id + ', #screw-search-details').html(content)
                  return @
                  
-              initsearch: ->
+              initsearch: (render_callback) ->
                  $(@el.id + ', #screw-search-term').betterAutocomplete('init',
                     '/screw/search', {}, {
                        constructURL: (path, query) ->
                           path + "/" + escape(query)
                           
-                       select: (result, $input) =>
-                          $(@el, 'screw-search-details').append("<span>" + result + "</span>")
+                       select: (result, $input) ->
+                          render_callback(result)
+                          true
 
                        themeResult: (result) ->
-                          "<h4>" + result.owner + "/" + result.name + "</h4>"
+                          "<h4><b>" + result.owner + "</b>/" + result.name + "</h4>"
 
                        processRemoteData: (data) ->
                           data.repositories
