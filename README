@@ -4,6 +4,9 @@ Goal:
    So the purpose will evolve and that's it ;)
 
    Get back on the "no idea" concept.
+   So, I not have a lot of ideas and I bet that I'm not the only one.
+   Why not spend a small amount of my time writing tools to help guys to find ideas to work on.
+   And maybe the opposite can help too. What if some guys have a lot of ideas and are not able to implement them !
 
    In the past. Another idea : 
    --Today, at the menu, I try to learn Bépo keyboard layout and I fall in love with games like ZType.--
@@ -19,6 +22,8 @@ Rules:
    - Like that, anyone can see if he can help
    - Or if is project will be challenging
 
+   - I can also build a command line tool that help bootstrap issue fixing
+
 Tech:
 
    - Play 2.0
@@ -26,7 +31,8 @@ Tech:
    - MongoDB/Lucene
    - Nginx
    - HTML5
+   - Backbone/requirejs/handlebars
 
 First:
 
-   - Using Github API v3 to find issues
+   - Using Github API v3 to find issues and projects
