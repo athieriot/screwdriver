@@ -5,3 +5,4 @@ resolvers ++= Seq(
 )
 
 addSbtPlugin("play" % "sbt-plugin" % "2.0-RC1-SNAPSHOT")
+addSbtPlugin("com.typesafe.startscript" % "xsbt-start-script-plugin" % "0.5.0")
