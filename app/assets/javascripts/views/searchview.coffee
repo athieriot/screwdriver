@@ -24,7 +24,7 @@ define ['text!templates/repo.html', \
                           
                        select: (result, $input) ->
                           render_callback(result)
-                          true
+                          $('.better-autocomplete').hide
 
                        themeResult: (result) ->
                           "<h4><b>" + result.owner + "</b>/" + result.name + "</h4>"
@@ -35,4 +35,4 @@ define ['text!templates/repo.html', \
                        getGroup: (result) ->
                           "github"
                     }
-                 )
+                 ).attr('placeholder', 'ready')

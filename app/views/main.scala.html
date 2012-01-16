@@ -28,7 +28,7 @@
         </script>
 
         <!-- Le styles -->
-        <link rel="stylesheet" media="screen" href="/assets/stylesheets/main.css">
+        <link media="screen" href="/assets/stylesheets/main.css" rel="stylesheet">
         <link href="/assets/stylesheets/bootstrap-1.4.0.min.css" rel="stylesheet">
         <link href="/assets/stylesheets/better-autocomplete.css" rel="stylesheet">
 
@@ -89,9 +89,20 @@
 
     <body>
 
+        <div class="topbar" data-scrollspy="scrollspy">
+            <div class="topbar-inner">
+                <div class="container">
+
+                    <a class="brand" href="#">Screwdriver</a><ul class="nav">
+                    <li class=""><a href="#">About</a></li>
+                </ul>
+                </div>
+            </div>
+        </div>
+
         <div class="container">
 
-            <div class="content">
+            <div id="global-content" class="content">
                 <div class="page-header">
                     <h1>@title</h1>
                 </div>
