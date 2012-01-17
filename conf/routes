@@ -14,6 +14,7 @@ DELETE  /screw                      controllers.ScrewResource.delete()
 
 # Utility API
 GET     /screw/search/:term         controllers.ScrewResource.search(term: String)
+GET     /driver/search/:term        controllers.DriverResource.search(term: String)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

@@ -21,4 +21,13 @@ object GitHubUtilsTest extends Specification {
       GitHubUtils.searchReposOnTerm("infinitest") should beAnInstanceOf[Promise[JsValue]]
     }
   }
+
+  "GitHubUtils search user on athieriot" should {
+    "return at least one result" in {
+      GitHubUtils.searchUsersOnTerm("athieriot") should not beNull
+    }
+    "return a Json Promise" in {
+      GitHubUtils.searchUsersOnTerm("athieriot") should beAnInstanceOf[Promise[JsValue]]
+    }
+  }
 }
