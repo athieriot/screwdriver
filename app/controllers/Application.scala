@@ -5,7 +5,7 @@ import play.api.mvc._
 object Application extends Controller {
 
   def index = Action {
-    Ok(views.html.index())
+    Ok(views.html.search())
   }
 
   def search = Action {
