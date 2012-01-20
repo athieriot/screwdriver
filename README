@@ -24,6 +24,25 @@ Rules:
 
    - I can also build a command line tool that help bootstrap issue fixing
 
+Todo:
+
+   - --Find repos on Github--
+   - --Find people on Github--
+   - Write an introduction for the site
+   - Do a poll about the general idea
+   - Link between the owner of a repo and a driver
+   - Start thinking about a better research (smarter like index descriptions and skills, add google code, bitbucket, selection of the user)
+   - Why not a single input
+   - add issues (follow github or not)
+   - function of the project language, propose some reading or procs
+   - Note on level of issues
+   - design
+   - buy a cool domain name
+   - Transfer this todo list on screwdriver
+   - Warning: Dont want to write a JIRA like site
+   - Start thinking of a command line tool to help boostraping app or issues
+   - Linked in of drivers?
+
 Tech:
 
    - Play 2.0
@@ -32,7 +51,3 @@ Tech:
    - Nginx
    - HTML5
    - Backbone/requirejs/handlebars
-
-First:
-
-   - Using Github API v3 to find issues and projects
