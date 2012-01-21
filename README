@@ -1,10 +1,9 @@
 Goal:
 
-   Ah, bullshit. Screwdriver is my excuse to learn some new technologies !
-   So the purpose will evolve and that's it ;)
+   Screwdriver is my excuse to learn some new technologies !
+   So the purpose will evolve at my will ... maybe ;)
 
-   Get back on the "no idea" concept.
-   So, I not have a lot of ideas and I bet that I'm not the only one.
+   So, I do not have a lot of ideas and I bet that I'm not the only one.
    Why not spend a small amount of my time writing tools to help guys to find ideas to work on.
    And maybe the opposite can help too. What if some guys have a lot of ideas and are not able to implement them !
 
@@ -26,28 +25,34 @@ Rules:
 
 Todo:
 
+   Features:
+
    - --Find repos on Github--
    - --Find people on Github--
-   - Write an introduction for the site
-   - Do a poll about the general idea
    - Link between the owner of a repo and a driver
-   - Start thinking about a better research (smarter like index descriptions and skills, add google code, bitbucket, selection of the user)
+   - Connexion with a Github account
    - Why not a single input
-   - add issues (follow github or not)
+   - Add the issues of a project in the account
+   - Start thinking about a better research (smarter like index descriptions and skills, add google code, bitbucket, selection of the user)
    - function of the project language, propose some reading or procs
    - Note on level of issues
+   - Start thinking of a command line tool to help boostraping app or issues
+   - Warning: Dont want to write a JIRA like site or eaven a trello
+   - Linked in of drivers?
+
+   General: 
+   
+   - Write an introduction for the site
+   - Do a poll about the general idea
    - design
    - buy a cool domain name
    - Transfer this todo list on screwdriver
-   - Warning: Dont want to write a JIRA like site
-   - Start thinking of a command line tool to help boostraping app or issues
-   - Linked in of drivers?
 
 Tech:
 
    - Play 2.0
    - Twitter bootstrap
-   - MongoDB/Lucene
+   - MongoDB/Elasticsearch
    - Nginx
    - HTML5
    - Backbone/requirejs/handlebars

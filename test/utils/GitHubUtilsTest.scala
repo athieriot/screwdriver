@@ -30,4 +30,16 @@ object GitHubUtilsTest extends Specification {
       GitHubUtils.searchUsersOnTerm("athieriot") should beAnInstanceOf[Promise[JsValue]]
     }
   }
+  /*
+  "GitHubUtils search user on Aurélien Thieriot" should {
+    "not be null" in {
+      GitHubUtils.searchUsersOnTerm("Aurélien Thieriot") should not beNull
+    }
+  }
+
+  "GitHubUtils search user on anything" should {
+    "be empty" in {
+      GitHubUtils.searchUsersOnTerm("Aurélien Thieriot") should not beNull
+    }
+  }   */
 }
