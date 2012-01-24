@@ -1,19 +1,15 @@
 /* Override some defaults */
 html, body {
     background-color: #eee;
+    padding-top: 30px
 }
 .container > footer p {
     text-align: center; /* center align it with the container */
-}
-.container {
-    width: 930px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
 }
 
 /* The white background content wrapper */
 .content {
     background-color: #fff;
-    padding: 20px;
-    margin: 40px -20px 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
     -webkit-border-radius: 0 0 6px 6px;
     -moz-border-radius: 0 0 6px 6px;
     border-radius: 0 0 6px 6px;
@@ -26,17 +22,11 @@ html, body {
 .page-header {
     background-color: #f5f5f5;
     padding: 20px 20px 10px;
-    margin: -20px -20px 20px;
+    margin: -20px 0 20px;
 }
 
 /* Styles you shouldn't keep as they are for displaying this base example only */
 .content .left-column,
 .content .right-column {
-    min-height: 600px;
-}
-/* Give a quick and non-cross-browser friendly divider */
-.content .right-column {
-    margin-left: 0;
-    padding-left: 19px;
-    border-left: 1px solid #eee;
+    min-height: 400px;
 }

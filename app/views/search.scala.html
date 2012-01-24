@@ -2,33 +2,24 @@
     Screwdriver <small>help you find some screws or drivers</small>
 } {
     <div class="row">
-        <div class="left-column span7">
-
-            <form id="screw-search-form" action="" class="form-stacked">
-                <fieldset>
-                    <legend>Find a screw</legend>
-                    <div class="clearfix">
-                        <div class="input">
-                            <input class="xlarge" id="screw-search-term" name="screw-search-term" size="30" type="text">
-                        </div>
-                    </div><!-- /clearfix -->
-                </fieldset>
-             </form>
-             <div id="screw-search-details">
-             </div>
-        </div>
-        <div class="right-column span7">
-            <form id="driver-search-form" action="" class="form-stacked">
-                <fieldset>
-                    <legend>Find a driver</legend>
-                    <div class="clearfix">
-                        <div class="input">
-                            <input class="xlarge" id="driver-search-term" name="driver-search-term" size="30" type="text">
-                        </div>
-                    </div><!-- /clearfix -->
-                </fieldset>
-            </form>
-            <div id="driver-search-details">
+        <div class="span12">
+            <div row>
+                <div class="left-column span6">
+                    <form id="screw-search-form" class="well form-search">
+                        <legend>Find a screw</legend>
+                        <input class="search-query" id="screw-search-term" name="screw-search-term" type="text">
+                     </form>
+                     <div id="screw-search-details">
+                     </div>
+                </div>
+                <div class="right-column span5">
+                    <form id="driver-search-form" class="well form-search">
+                        <legend>Find a driver</legend>
+                        <input class="search-query" id="driver-search-term" name="driver-search-term" type="text">
+                    </form>
+                    <div id="driver-search-details">
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -28,7 +28,7 @@
         <![endif]-->
         <!-- Le styles -->
         <link media="screen" href="/assets/stylesheets/main.css" rel="stylesheet">
-        <link href="/assets/stylesheets/bootstrap-1.4.0.min.css" rel="stylesheet">
+        <link href="/assets/stylesheets/bootstrap.css" rel="stylesheet">
         <link href="/assets/stylesheets/better-autocomplete.css" rel="stylesheet">
 
         <!-- Le fav and touch icons -->
@@ -39,15 +39,16 @@
     </head>
 
     <body>
-
-        <div class="topbar" data-scrollspy="scrollspy">
-            <div class="topbar-inner">
+        <div class="navbar navbar-fixed">
+            <div class="navbar-inner">
                 <div class="container">
                     <a class="brand" href="#">Screwdriver</a>
-
                     <ul class="nav">
                         <li class=""><a href="/search">Search</a></li>
                         <li class=""><a href="/about">About</a></li>
+                    </ul>
+                    <ul id="connect_container" class="nav pull-right">
+                        <li class=""><a id='connect_link' href='/connect'>Connect</a></li>
                     </ul>
                 </div>
             </div>

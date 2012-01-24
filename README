@@ -29,10 +29,11 @@ Todo:
 
    - --Find repos on Github--
    - --Find people on Github--
-   - Link between the owner of a repo and a driver
    - Connexion with a Github account
-   - Why not a single input
    - Add the issues of a project in the account
+   - Link between the owner of a repo and a driver
+   - Why not a single input
+   - Taking Gist in account
    - Start thinking about a better research (smarter like index descriptions and skills, add google code, bitbucket, selection of the user)
    - function of the project language, propose some reading or procs
    - Note on level of issues
@@ -43,7 +44,7 @@ Todo:
    General: 
    
    - Write an introduction for the site
-   - Do a poll about the general idea
+   - Do a poll about the general idea and made a link in the site
    - design
    - buy a cool domain name
    - Transfer this todo list on screwdriver
@@ -51,7 +52,7 @@ Todo:
 Tech:
 
    - Play 2.0
-   - Twitter bootstrap
+   - Twitter bootstrap 2.0
    - MongoDB/Elasticsearch
    - Nginx
    - HTML5
