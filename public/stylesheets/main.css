@@ -28,5 +28,6 @@ html, body {
 /* Styles you shouldn't keep as they are for displaying this base example only */
 .content .left-column,
 .content .right-column {
-    min-height: 400px;
+    min-height: 600px;
+    width: 440px;
 }
