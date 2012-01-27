@@ -1,6 +1,7 @@
 define ['text!templates/user.html', \
         'lib/backbone', \
-        'lib/handlebars'], (template) ->
+        'lib/handlebars',
+        'lib/bootstrap-dropdown'], (template) ->
            Backbone.View.extend
               el: $('#connect_container')
 
@@ -21,5 +22,6 @@ define ['text!templates/user.html', \
                   content = compile_template(user)
                   @el.html(content)
 
+                $('.dropdown-toggle').dropdown()
                 @el.show()
                 @

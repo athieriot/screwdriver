@@ -10,6 +10,7 @@ GET     /about                      controllers.Application.about()
 # Security
 GET     /connect                    controllers.Security.connect()
 GET     /authorized                 controllers.Security.authorized()
+GET     /deconnect                    controllers.Security.deconnect()
 
 # Screw API
 GET     /screw                      controllers.ScrewResource.list()

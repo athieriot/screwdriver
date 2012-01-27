@@ -48,6 +48,10 @@ object Security extends Controller {
     else
       Unauthorized("Call to Github unauthorized")
   }
+
+  def deconnect() = Action {
+    Ok(views.html.search.render()).withNewSession
+  }
   
   private def askAuthorizations(): SimpleResult[Results.EmptyContent] = {
     Redirect(gitHubUtils.authorize(CLIENT_ID))
