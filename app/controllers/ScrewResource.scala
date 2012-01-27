@@ -5,7 +5,7 @@ import models.Screw
 import org.bson.types.ObjectId
 import play.api.libs.WS
 import play.api.libs.concurrent.Promise
-import utils.GitHubUtils
+import utils.GitHubUtilsv2
 
 /**
  * Created by IntelliJ IDEA.
@@ -17,7 +17,7 @@ import utils.GitHubUtils
 object ScrewResource extends Controller {
 
   def search(term: String) = Action {
-    Async(GitHubUtils.searchReposOnTerm(term).map(Ok(_)))
+    Async(GitHubUtilsv2.searchReposOnTerm(term).map(Ok(_)))
   }
 
   def list = Action {

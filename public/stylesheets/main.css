@@ -25,6 +25,13 @@ html, body {
     margin: -20px 0 20px;
 }
 
+/* Connection header*/
+.avatar {
+    height: 30px;
+    vertical-align: middle;
+    padding: 3px;
+}
+
 /* Styles you shouldn't keep as they are for displaying this base example only */
 .content .left-column,
 .content .right-column {

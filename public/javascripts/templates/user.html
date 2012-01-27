@@ -1,24 +1,2 @@
-<div>
-   Name: <span>{{name}}</span> <br />
-   Login: <span>{{login}}</span> <br />
-   Location: <span>{{location}}</span> <br />
-   Company: <span>{{company}}</span> <br />
-   Blog: <a href="{{blog}}">{{blog}}</a> <br />
-   Email: <a href="{{email}}">{{email}}</a><br />
-   <img src="http://www.gravatar.com/avatar/{{gravatar_id}}" /> <br />
-
-   Created: <span>{{created_at}}</span> <br />
-
-   {{#if public_repo_count}}
-   <span class="label success">Public Repos: {{public_repo_count}}</span> <br />
-   {{/if}}
-   {{#if public_gist_count}}
-   <span class="label warning">Public Gists: {{public_gist_count}}</span> <br />
-   {{/if}}
-   {{#if following_count}}
-   <span class="label notice">Following: {{following_count}}</span> <br />
-   {{/if}}
-   {{#if followers_count}}
-   <span class="label important">Followers: {{followers_count}}</span> <br />
-   {{/if}}
-</div>
+<li><a href="#">{{name}}</a></li>
+<li><a href="#" class="thumbnail" style="padding: 0;"><img class="avatar" src="{{avatar_url}}" /></a></li>

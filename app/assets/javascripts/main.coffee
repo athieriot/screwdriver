@@ -1,6 +1,9 @@
-define ['require', 'domReady', 'views/searchview.min'], (require) ->
-   domReady = require('domReady')
-   SearchView = require('views/searchview.min')
+define ['require', \
+        'views/searchview.min', \
+        'views/connectview.min'], (require) ->
+  ConnectView = require('views/connectview.min')
+  SearchView = require('views/searchview.min')
 
-   domReady () ->
-      new SearchView() 
+  $(document).ready ->
+    new ConnectView()
+    new SearchView()

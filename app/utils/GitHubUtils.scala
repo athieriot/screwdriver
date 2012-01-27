@@ -1,8 +1,8 @@
 package utils
 
-import play.api.libs.json.JsValue
-import play.api.libs.concurrent.Promise
 import play.api.libs.WS
+import play.api.libs.concurrent.Promise
+import play.api.libs.json._
 
 /**
  * Created by IntelliJ IDEA.
@@ -13,22 +13,39 @@ import play.api.libs.WS
 
 object GitHubUtils {
 
-  private val github_url = "http://github.com/api/"
-  
-  private val github_version = "v2/"
-  private val github_result_format = "json/"
+  private val github_api_url = "https://api.github.com/"
+  private val github_url = "https://github.com/"
 
-  private val github_repos_search = "repos/search/"
-  private val github_users_search = "user/search/"
-  
-  
-  def gitHubBaseUrl = github_url + github_version + github_result_format
-  
-  def searchReposOnTerm(term: String): Promise[JsValue] = {
-    WS.url(gitHubBaseUrl + github_repos_search + term).get().map(_.json)
+  private val github_oauth = "login/oauth/"
+
+  private val github_authorize = "authorize"
+  private val github_access_token = "access_token"
+  private val github_user = "user"
+
+  def authorize(clientId: String): String = github_url + github_oauth + github_authorize + "?client_id=" + clientId
+
+  def accessToken(client_id: String, client_secret: String, code: String): String = {
+    val token = WS.url(github_url + github_oauth + github_access_token)
+      .withQueryString(("client_id", client_id))
+      .withQueryString(("client_secret", client_secret))
+      .withQueryString(("code", code))
+      .get()
+      .value.get.body
+
+    val BodyPattern = "access_token=(.*)&token_type=(.*)".r
+    val BodyPattern(access_token, token_type) = token
+
+    return access_token;
   }
 
-  def searchUsersOnTerm(term: String): Promise[JsValue] = {
-    WS.url(gitHubBaseUrl + github_users_search + term).get().map(_.json)
+  def testCall(access_token: String): Boolean = {
+    ((user(access_token).value.get) \ "login") != null
+  }
+  
+  def user(access_token: String): Promise[JsValue] = {
+    WS.url(github_api_url + github_user)
+      .withHeaders(("Authorization", "token " + access_token))
+      .get()
+      .map(_.json)
   }
 }

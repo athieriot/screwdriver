@@ -7,13 +7,19 @@ GET     /                           controllers.Application.index()
 GET     /search                     controllers.Application.search()
 GET     /about                      controllers.Application.about()
 
+# Security
+GET     /connect                    controllers.Security.connect()
+GET     /authorized                 controllers.Security.authorized()
+
 # Screw API
 GET     /screw                      controllers.ScrewResource.list()
 POST    /screw                      controllers.ScrewResource.add()
 DELETE  /screw                      controllers.ScrewResource.delete()
 
 # Utility API
-GET     /screw/search/:term         controllers.ScrewResource.search(term: String)
+GET     /user                       controllers.DriverResource.user()
+GET     /authorized                 controllers.Security.authorized()
+GET     /project/search/:term       controllers.ScrewResource.search(term: String)
 GET     /driver/search/:term        controllers.DriverResource.search(term: String)
 
 # Map static resources from the /public folder to the /assets URL path

@@ -1,8 +1,6 @@
 package utils
 
 import org.specs2.mutable.Specification
-import play.api.libs.concurrent.Promise
-import play.api.libs.json.JsValue
 
 /**
  * Created by IntelliJ IDEA.
@@ -13,33 +11,9 @@ import play.api.libs.json.JsValue
 
 object GitHubUtilsTest extends Specification {
 
-  "GitHubUtils search repo on infinitest" should {
-    "return at least one result" in {
-      GitHubUtils.searchReposOnTerm("infinitest") should not beNull
-    }
-    "return a Json Promise" in {
-      GitHubUtils.searchReposOnTerm("infinitest") should beAnInstanceOf[Promise[JsValue]]
+  "GitHubUtils request authorization URI" should {
+    "return an url with client_id as argument" in {
+      new GitHubUtils().authorize("blabla") must contain("client_id=blabla")
     }
   }
-
-  "GitHubUtils search user on athieriot" should {
-    "return at least one result" in {
-      GitHubUtils.searchUsersOnTerm("athieriot") should not beNull
-    }
-    "return a Json Promise" in {
-      GitHubUtils.searchUsersOnTerm("athieriot") should beAnInstanceOf[Promise[JsValue]]
-    }
-  }
-  /*
-  "GitHubUtils search user on Aurélien Thieriot" should {
-    "not be null" in {
-      GitHubUtils.searchUsersOnTerm("Aurélien Thieriot") should not beNull
-    }
-  }
-
-  "GitHubUtils search user on anything" should {
-    "be empty" in {
-      GitHubUtils.searchUsersOnTerm("Aurélien Thieriot") should not beNull
-    }
-  }   */
 }

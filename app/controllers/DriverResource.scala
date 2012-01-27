@@ -1,9 +1,7 @@
 package controllers
 
 import play.api.mvc._
-import models.Screw
-import org.bson.types.ObjectId
-import utils.GitHubUtils
+import utils.{GitHubUtils, GitHubUtilsv2}
 
 /**
  * Created by IntelliJ IDEA.
@@ -15,6 +13,11 @@ import utils.GitHubUtils
 object DriverResource extends Controller {
 
   def search(term: String) = Action {
-    Async(GitHubUtils.searchUsersOnTerm(term).map(Ok(_)))
+    Async(GitHubUtilsv2.searchUsersOnTerm(term).map(Ok(_)))
+  }
+
+  //TODO: Do a block Action "Authentication"
+  def user() = Action { request =>
+    Async(GitHubUtils.user(controllers.Security.extractToken(request).getOrElse("")).map(Ok(_)))
   }
 }

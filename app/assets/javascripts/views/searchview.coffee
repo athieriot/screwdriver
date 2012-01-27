@@ -1,10 +1,10 @@
 define ['text!templates/repo.html', \
-        'text!templates/user.html', \
+        'text!templates/driver.html', \
         'lib/backbone', \
         'lib/handlebars', \
         'lib/jquery.better-autocomplete'], (repo, user) ->
            Backbone.View.extend
-              screw_search_url: '/screw/search'
+              screw_search_url: '/project/search'
               driver_search_url: '/driver/search'
 
               el: $('#search')
