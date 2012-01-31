@@ -8,9 +8,9 @@ GET     /search                     controllers.Application.search()
 GET     /about                      controllers.Application.about()
 
 # Security
-GET     /connect                    controllers.Security.connect()
-GET     /authorized                 controllers.Security.authorized()
-GET     /deconnect                    controllers.Security.deconnect()
+GET     /connect                    controllers.Authentication.connect()
+GET     /authorized                 controllers.Authentication.authorized()
+GET     /deconnect                  controllers.Authentication.deconnect()
 
 # Screw API
 GET     /screw                      controllers.ScrewResource.list()
@@ -19,7 +19,7 @@ DELETE  /screw                      controllers.ScrewResource.delete()
 
 # Utility API
 GET     /user                       controllers.DriverResource.user()
-GET     /authorized                 controllers.Security.authorized()
+GET     /authorized                 controllers.Authentication.authorized()
 GET     /project/search/:term       controllers.ScrewResource.search(term: String)
 GET     /driver/search/:term        controllers.DriverResource.search(term: String)
 

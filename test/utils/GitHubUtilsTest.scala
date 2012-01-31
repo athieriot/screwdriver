@@ -13,7 +13,7 @@ object GitHubUtilsTest extends Specification {
 
   "GitHubUtils request authorization URI" should {
     "return an url with client_id as argument" in {
-      new GitHubUtils().authorize("blabla") must contain("client_id=blabla")
+      GitHubUtils().authorize("blabla") must contain("client_id=blabla")
     }
   }
 }

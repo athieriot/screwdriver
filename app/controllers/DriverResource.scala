@@ -2,6 +2,7 @@ package controllers
 
 import play.api.mvc._
 import utils.{GitHubUtils, GitHubUtilsv2}
+import controllers.Authentication._
 
 /**
  * Created by IntelliJ IDEA.
@@ -18,6 +19,6 @@ object DriverResource extends Controller {
 
   //TODO: Do a block Action "Authentication"
   def user() = Action { request =>
-    Async(GitHubUtils.user(controllers.Security.extractToken(request).getOrElse("")).map(Ok(_)))
+    Async(GitHubUtils().user(controllers.Authentication.extractToken(request).getOrElse("")).map(Ok(_)))
   }
 }

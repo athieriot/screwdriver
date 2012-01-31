@@ -1,8 +1,8 @@
 package utils
 
-import play.api.libs.WS
 import play.api.libs.concurrent.Promise
 import play.api.libs.json._
+import play.api.libs.ws.WS
 
 /**
  * Created by IntelliJ IDEA.
@@ -11,7 +11,7 @@ import play.api.libs.json._
  * Time: 21:56
  */
 
-object GitHubUtils {
+class GitHubUtils {
 
   private val github_api_url = "https://api.github.com/"
   private val github_url = "https://github.com/"
@@ -48,4 +48,8 @@ object GitHubUtils {
       .get()
       .map(_.json)
   }
+}
+
+object GitHubUtils {
+  def apply() = new GitHubUtils
 }

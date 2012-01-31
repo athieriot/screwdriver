@@ -1,6 +1,5 @@
 package controllers
 
-
 import play.api.Play.configuration
 import play.api.Play.current
 import play.api.mvc._
@@ -14,14 +13,18 @@ import utils.GitHubUtils
  * Time: 15:55
  */
 
-object Security extends Controller {
+object Authentication extends Controller {
 
-  var gitHubUtils = GitHubUtils
+  var gitHubUtils = GitHubUtils()
 
   val GITHUB_TOKEN_SESSION = "token"
 
   private val CLIENT_ID =  configuration.getString("github.client.id").getOrElse("")
   private val CLIENT_SECRET =  configuration.getString("github.client.secret").getOrElse("")
+  
+  /*def Secured[A](block: Request[AnyContent] => A)(implicit request: RequestHeader): A = {
+    block(request)
+  } */
 
   def connect() = Action { request =>
     val access_token = extractToken(request)
@@ -58,4 +61,8 @@ object Security extends Controller {
   }
 
   private def isAccessTokenOk(access_token: String) = gitHubUtils.testCall(access_token)
+  
+  def setGitHubUtils(gitHubUtils: GitHubUtils) {
+    this.gitHubUtils = gitHubUtils
+  }
 }

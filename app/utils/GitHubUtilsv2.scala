@@ -2,7 +2,7 @@ package utils
 
 import play.api.libs.json.JsValue
 import play.api.libs.concurrent.Promise
-import play.api.libs.WS
+import play.api.libs.ws.WS
 
 /**
  * Created by IntelliJ IDEA.
