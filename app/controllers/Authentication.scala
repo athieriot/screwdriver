@@ -19,12 +19,8 @@ object Authentication extends Controller {
 
   val GITHUB_TOKEN_SESSION = "token"
 
-  private val CLIENT_ID =  configuration.getString("github.client.id").getOrElse("")
-  private val CLIENT_SECRET =  configuration.getString("github.client.secret").getOrElse("")
-  
-  /*def Secured[A](block: Request[AnyContent] => A)(implicit request: RequestHeader): A = {
-    block(request)
-  } */
+  val CLIENT_ID =  configuration.getString("github.client.id").getOrElse("")
+  val CLIENT_SECRET =  configuration.getString("github.client.secret").getOrElse("")
 
   def connect() = Action { request =>
     val access_token = extractToken(request)
@@ -41,7 +37,7 @@ object Authentication extends Controller {
 
   //Call only on a return of Github OAuth(entification)
   def authorized() = Action { request =>
-    val temporary_code = request.queryString.get("code").get.head
+    val temporary_code = request.queryString.get("code").getOrElse(List("")).head
     val access_token = gitHubUtils.accessToken(CLIENT_ID, CLIENT_SECRET, temporary_code)
 
     if (isAccessTokenOk(access_token))
@@ -61,7 +57,7 @@ object Authentication extends Controller {
   }
 
   private def isAccessTokenOk(access_token: String) = gitHubUtils.testCall(access_token)
-  
+
   def setGitHubUtils(gitHubUtils: GitHubUtils) {
     this.gitHubUtils = gitHubUtils
   }
