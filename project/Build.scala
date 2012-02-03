@@ -9,6 +9,7 @@ object ApplicationBuild extends Build {
 
     val appDependencies = Seq(
       "com.novus" %% "salat-core" % "0.0.8-SNAPSHOT",
+      //Only to activate the Specs2 mock feature
       "org.mockito" % "mockito-all" % "1.9.0"
     )
 

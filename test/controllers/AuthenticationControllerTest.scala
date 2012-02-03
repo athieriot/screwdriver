@@ -4,8 +4,8 @@ import org.specs2.mutable._
 import play.api.test._
 import play.api.test.Helpers._
 import utils._
-import org.mockito.Mockito._
-import org.mockito.Matchers._
+import org.specs2.mock.Mockito
+import org.specs2.specification.Scope
 
 /**
  * Created by IntelliJ IDEA.
@@ -14,84 +14,125 @@ import org.mockito.Matchers._
  * Time: 23:06
  */
 
-object AuthenticationControllerTest extends Specification {
+class AuthenticationControllerTest extends Specification with Mockito {
 
-  val gitHubUtilsSpy = mock(classOf[GitHubUtils])
+  trait mocks extends Scope {
 
-  lazy val fakeRequestWithSession = FakeRequest().withSession((Authentication.GITHUB_TOKEN_SESSION, "fakeSession"))
+    val FAKE_SESSION = "fakeSession"
+    val FAKE_ACCESS_TOKEN = "fakeAccessToken"
+    val FAKE_CODE = "fakeCode"
 
-  "Authentication Controller" should {
-    "can extract the github token in session" in {
-      running(FakeApplication()) {
-        controllers.Authentication.extractToken(fakeRequestWithSession) must equalTo(Some("fakeSession"))
-      }
-    }
-    "redirect to Github if no session token is found" in {
-      running(FakeApplication()) {
-        val result = controllers.Authentication.connect()(FakeRequest())
+    lazy val gitHubUtilsSpy = mock[GitHubUtils]
 
-        status(result) must equalTo(SEE_OTHER)
-        redirectLocation(result).get must not beNull
-      }
-    }
-    "redirect to Github if session token is not valid" in {
-      running(FakeApplication()) {
-        when(gitHubUtilsSpy.testCall(anyString())).thenReturn(false)
-        when(gitHubUtilsSpy.authorize(anyString())).thenCallRealMethod()
+    lazy val fakeRequestWithSession = FakeRequest().withSession((Authentication.GITHUB_TOKEN_SESSION, FAKE_SESSION))
 
-        val result = authenticationControllerWithMock().connect()(fakeRequestWithSession)
-
-        status(result) must equalTo(SEE_OTHER)
-        redirectLocation(result).get must not beNull
-      }
-    }
-    "return OK if already connected" in {
-      running(FakeApplication()) {
-        when(gitHubUtilsSpy.testCall(anyString())).thenReturn(true)
-
-        val result = authenticationControllerWithMock().connect()(fakeRequestWithSession)
-
-        status(result) must equalTo(OK)
-      }
-    }
-    "intersept Github response and Unauthorize when code is not Valid" in {
-      running(FakeApplication()) {
-        when(gitHubUtilsSpy.accessToken(anyString(), anyString(), anyString())).thenReturn("fakeAccessToken")
-        when(gitHubUtilsSpy.testCall(anyString())).thenReturn(false)
-
-        val result = authenticationControllerWithMock().authorized()(FakeRequest("GET", "/?code=fakeCode"))
-
-        status(result) must equalTo(UNAUTHORIZED)
-      }
+    def fakeRequestAsGitHubResponse(code: String) = {
+      FakeRequest("GET", "/?code=" + code)
     }
 
-    "intersept Github response and Unauthorize when no code is provided" in {
-      running(FakeApplication()) {
-        when(gitHubUtilsSpy.accessToken(anyString(), anyString(), anyString())).thenReturn("fakeAccessToken")
-        when(gitHubUtilsSpy.testCall("")).thenReturn(false)
-
-        val result = authenticationControllerWithMock().authorized()(FakeRequest())
-
-        status(result) must equalTo(UNAUTHORIZED)
-      }
-    }
-
-    "intersept Github response and return OK if successfully connected" in {
-      running(FakeApplication()) {
-        when(gitHubUtilsSpy.accessToken(anyString(), anyString(), anyString())).thenReturn("fakeAccessToken")
-        when(gitHubUtilsSpy.testCall(anyString())).thenReturn(true)
-
-        val result = authenticationControllerWithMock().authorized()(FakeRequest("GET", "/?code=fakeCode"))
-
-        status(result) must equalTo(OK)
-      }
+    def authenticationControllerWithMock() = {
+      //TODO: Find a proper way to inject GitHubObject in Authentication Controller (implicit)
+      //http://julien.richard-foy.fr/blog/2011/11/26/dependency-injection-in-scala-with-play-2-it-s-free/
+      val controller = controllers.Authentication
+      controller.setGitHubUtils(gitHubUtilsSpy)
+      controller
     }
   }
 
-  def authenticationControllerWithMock() = {
-    //TODO: Find a proper way to inject GitHubObject in Authentication Controller (implicit)
-    val controller = controllers.Authentication
-    controller.setGitHubUtils(gitHubUtilsSpy)
-    controller
+  "Authentication Controller" should {
+
+    "be able to extract the github token in session" in new mocks {
+      running(FakeApplication()) {
+        controllers.Authentication.extractToken(fakeRequestWithSession) must equalTo(Some(FAKE_SESSION))
+      }
+    }
+
+    "redirect to Github if no session token is found" in {
+      running(FakeApplication()) {
+        //Given
+        //When
+        val result = controllers.Authentication.connect()(FakeRequest())
+
+        //Then
+        status(result) must equalTo(SEE_OTHER)
+        redirectLocation(result).get must not beNull
+      }
+    }
+
+    "redirect to Github if session token is not valid" in new mocks {
+      running(FakeApplication()) {
+        //Given
+        gitHubUtilsSpy.testCall(anyString) returns false
+        gitHubUtilsSpy.authorize(anyString) returns "something"
+
+        //When
+        val result = authenticationControllerWithMock().connect()(fakeRequestWithSession)
+
+        //Then
+        status(result) must equalTo(SEE_OTHER)
+        redirectLocation(result).get must not beNull
+
+        there was one(gitHubUtilsSpy).testCall(anyString)
+      }
+    }
+
+    "return OK if already connected" in new mocks {
+      running(FakeApplication()) {
+        //Given
+        gitHubUtilsSpy.testCall(anyString) returns true
+
+        //When
+        val result = authenticationControllerWithMock().connect()(fakeRequestWithSession)
+
+        //Then
+        status(result) must equalTo(OK)
+        there was one(gitHubUtilsSpy).testCall(anyString)
+      }
+    }
+
+    "intersept Github response and Unauthorize when code is not Valid" in new mocks {
+      running(FakeApplication()) {
+        //Given
+        gitHubUtilsSpy.accessToken(anyString, anyString, anyString) returns FAKE_ACCESS_TOKEN
+        gitHubUtilsSpy.testCall(anyString) returns false
+
+        //When
+        val result = authenticationControllerWithMock().authorized()(fakeRequestAsGitHubResponse(FAKE_CODE))
+
+        //Then
+        status(result) must equalTo(UNAUTHORIZED)
+        there was one(gitHubUtilsSpy).testCall(anyString)
+      }
+    }
+
+    "intersept Github response and Unauthorize when no code is provided" in new mocks {
+      running(FakeApplication()) {
+        //Given
+        gitHubUtilsSpy.accessToken(anyString, anyString, anyString) returns FAKE_ACCESS_TOKEN
+        gitHubUtilsSpy.testCall("") returns false
+
+        //When
+        val result = authenticationControllerWithMock().authorized()(FakeRequest())
+
+        //Then
+        status(result) must equalTo(UNAUTHORIZED)
+        there was one(gitHubUtilsSpy).testCall(anyString)
+      }
+    }
+
+    "intersept Github response and return OK if successfully connected" in new mocks {
+      running(FakeApplication()) {
+        //Given
+        gitHubUtilsSpy.accessToken(anyString, anyString, anyString) returns FAKE_ACCESS_TOKEN
+        gitHubUtilsSpy.testCall(anyString) returns true
+
+        //When
+        val result = authenticationControllerWithMock().authorized()(fakeRequestAsGitHubResponse(FAKE_CODE))
+
+        //Then
+        status(result) must equalTo(OK)
+        there was one(gitHubUtilsSpy).testCall(anyString)
+      }
+    }
   }
 }

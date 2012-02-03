@@ -9,7 +9,7 @@ import org.specs2.mutable.Specification
  * Time: 21:56
  */
 
-object GitHubUtilsTest extends Specification {
+class GitHubUtilsTest extends Specification {
 
   "GitHubUtils request authorization URI" should {
     "return an url with client_id as argument" in {
