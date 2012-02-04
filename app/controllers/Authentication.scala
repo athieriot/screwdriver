@@ -26,6 +26,7 @@ object Authentication extends Controller {
 
   //Useful when another action need authentication
   //TODO: return access_token would be a good idea
+  //TODO: Even better if that can remember original address
   def Authenticated[A](action: Action[A]): Action[A] = {
     Action(action.parser) { request =>
       if (!amIConnected(request))

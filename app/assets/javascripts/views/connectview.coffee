@@ -1,7 +1,7 @@
 define ['text!templates/user.html', \
         'lib/backbone', \
         'lib/handlebars',
-        'lib/bootstrap-dropdown'], (template) ->
+        'lib/bootstrap.min'], (template) ->
            Backbone.View.extend
               el: $('#connect_container')
 

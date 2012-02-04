@@ -17,9 +17,7 @@ object DriverResource extends Controller {
     Async(GitHubUtilsv2.searchUsersOnTerm(term).map(Ok(_)))
   }
 
-  def user() = Authenticated {
-    Action { request =>
-      Async(GitHubUtils().user(Authentication.extractToken(request).getOrElse("")).map(Ok(_)))
-    }
+  def user() = Action { request =>
+    Async(GitHubUtils().user(Authentication.extractToken(request).getOrElse("")).map(Ok(_)))
   }
 }
