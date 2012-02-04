@@ -32,8 +32,6 @@ class AuthenticationControllerTest extends Specification with Mockito {
     }
 
     def authenticationControllerWithMock() = {
-      //TODO: Find a proper way to inject GitHubObject in Authentication Controller (implicit)
-      //http://julien.richard-foy.fr/blog/2011/11/26/dependency-injection-in-scala-with-play-2-it-s-free/
       val controller = controllers.Authentication
       controller.setGitHubUtils(gitHubUtilsSpy)
       controller
