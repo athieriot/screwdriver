@@ -6,6 +6,7 @@ import play.api.test.Helpers._
 import utils._
 import org.specs2.mock.Mockito
 import org.specs2.specification.Scope
+import play.api.mvc.Session
 
 /**
  * Created by IntelliJ IDEA.
@@ -120,7 +121,7 @@ class AuthenticationControllerTest extends Specification with Mockito {
       }
     }
 
-    "intersept Github response and return OK if successfully connected" in new mocks {
+    "intersept Github response, return OK and fill session if successfully connected" in new mocks {
       running(FakeApplication()) {
         //Given
         gitHubUtilsSpy.accessToken(anyString, anyString, anyString) returns FAKE_ACCESS_TOKEN
@@ -131,7 +132,20 @@ class AuthenticationControllerTest extends Specification with Mockito {
 
         //Then
         status(result) must equalTo(OK)
+        session(result).data must havePair(Authentication.GITHUB_TOKEN_SESSION -> FAKE_ACCESS_TOKEN)
         there was one(gitHubUtilsSpy).testCall(anyString)
+      }
+    }
+
+    "forget the token on deconnection" in new mocks {
+      running(FakeApplication()) {
+        //Given
+        //When
+        val result = controllers.Authentication.deconnect()(fakeRequestWithSession)
+
+        //Then
+        status(result) must equalTo(OK)
+        session(result).data must not havePair(Authentication.GITHUB_TOKEN_SESSION -> FAKE_ACCESS_TOKEN)
       }
     }
   }

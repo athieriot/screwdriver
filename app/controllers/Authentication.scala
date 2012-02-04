@@ -15,7 +15,7 @@ import utils.GitHubUtils
 
 object Authentication extends Controller {
 
-  var gitHubUtils = GitHubUtils()
+  var gitHubUtils: GitHubUtils = GitHubUtils()
 
   val GITHUB_TOKEN_SESSION = "token"
 
