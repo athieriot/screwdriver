@@ -29,14 +29,14 @@ Todo:
 
    - --Find repos on Github--
    - --Find people on Github--
-   - Connexion with a Github account
+   - --Connexion with a Github account--
    - Add the issues of a project in the account
+   - Note on level of issues
    - Link between the owner of a repo and a driver
    - Why not a single input
    - Taking Gist in account
    - Start thinking about a better research (smarter like index descriptions and skills, add google code, bitbucket, selection of the user)
    - function of the project language, propose some reading or procs
-   - Note on level of issues
    - Start thinking of a command line tool to help boostraping app or issues
    - Warning: Dont want to write a JIRA like site or eaven a trello
    - Linked in of drivers?
