@@ -13,11 +13,14 @@ define ['text!templates/user.html', \
                 $.ajax {
                   url: "/user",
                   success: (user) =>
-                     @render(user)
+                    @render(user)
+
+                  error: (jqXHR, status, error) =>
+                    @render()
                   }
               
               render: (user) ->
-                if user.type is "User"
+                if user? and user.type is "User"
                   compile_template = Handlebars.compile(template)
                   content = compile_template(user)
                   @el.html(content)

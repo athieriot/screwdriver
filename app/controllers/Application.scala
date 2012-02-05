@@ -4,12 +4,12 @@ import play.api.mvc._
 
 object Application extends Controller {
 
-  def index = Action {
-    Ok(views.html.search())
+  def index() = Action {
+    Ok(views.html.index())
   }
 
   def search = Action {
-    Ok(views.html.search())
+    Ok(views.html.index())
   }
 
   def about = Action {

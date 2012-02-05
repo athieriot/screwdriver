@@ -27,6 +27,7 @@ object Authentication extends Controller {
   //Useful when another action need authentication
   //TODO: return access_token would be a good idea
   //TODO: Even better if that can remember original address
+  //TODO: Do an Ajax callable function
   def Authenticated[A](action: Action[A]): Action[A] = {
     Action(action.parser) { request =>
       if (!amIConnected(request))
@@ -40,7 +41,7 @@ object Authentication extends Controller {
     if (!amIConnected(request))
       askAuthorizations()
     else
-      Ok("Already connected")
+      Ok(views.html.index())
   }
 
   //Called only on a return of Github OAuth
@@ -49,15 +50,14 @@ object Authentication extends Controller {
     val access_token = gitHubUtils.accessToken(CLIENT_ID, CLIENT_SECRET, temporary_code)
 
     if (isAccessTokenOk(access_token))
-      //TODO: Do an Ajax callable function
-      Ok(views.html.search.render())
+      Ok(views.html.index())
         .withSession(new Session(Map(GITHUB_TOKEN_SESSION -> access_token)))
     else
-      Unauthorized("Call to Github unauthorized")
+      Unauthorized(views.html.unauthorized())
   }
 
   def deconnect() = Action {
-    Ok(views.html.search.render()).withNewSession
+    Ok(views.html.index()).withNewSession
   }
 
   def extractToken[A](request: Request[A]): Option[String] = request.session.get(GITHUB_TOKEN_SESSION)
