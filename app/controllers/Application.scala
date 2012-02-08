@@ -15,4 +15,8 @@ object Application extends Controller {
   def about = Action {
     Ok(views.html.about())
   }
+
+  def space = Action {
+    Ok(views.html.space())
+  }
 }

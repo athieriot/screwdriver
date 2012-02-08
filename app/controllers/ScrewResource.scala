@@ -16,10 +16,6 @@ import utils.GitHubUtilsv2
 
 object ScrewResource extends Controller {
 
-  def search(term: String) = Action {
-    Async(GitHubUtilsv2.searchReposOnTerm(term).map(Ok(_)))
-  }
-
   def list = Action {
     Ok(Screw.count().toString)
   }

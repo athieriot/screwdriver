@@ -21,6 +21,7 @@ class GitHubUtils {
   private val github_authorize = "authorize"
   private val github_access_token = "access_token"
   private val github_user = "user"
+  private val github_user_repos = "user/repos"
 
   def authorize(clientId: String): String = github_url + github_oauth + github_authorize + "?client_id=" + clientId
 
@@ -44,6 +45,13 @@ class GitHubUtils {
   
   def user(access_token: String): Promise[JsValue] = {
     WS.url(github_api_url + github_user)
+      .withHeaders(("Authorization", "token " + access_token))
+      .get()
+      .map(_.json)
+  }
+
+  def userRepos(access_token: String): Promise[JsValue] = {
+    WS.url(github_api_url + github_user_repos)
       .withHeaders(("Authorization", "token " + access_token))
       .get()
       .map(_.json)

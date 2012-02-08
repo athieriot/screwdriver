@@ -9,19 +9,6 @@
         <meta name="description" content="">
         <meta name="author" content="Aurélien Thieriot">
 
-        <!--
-            RequireJS initialisation
-            jQuery and Underscore are loaded by default
-        -->
-        <script src="/assets/javascripts/lib/require.js"></script>
-        <script>
-            require({
-                baseUrl: '/assets/javascripts/',
-                priority: ['lib/jquery',
-                           'lib/underscore']
-            }, ['main.min']);
-        </script>
-
         <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
         <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -45,6 +32,7 @@
                     <a class="brand" href="#">Screwdriver</a>
                     <ul class="nav">
                         <li class=""><a href="/search">Search</a></li>
+                        <li class=""><a href="/space">Your projects</a></li>
                         <li class=""><a href="/about">About</a></li>
                     </ul>
                     <ul id="connect_container" class="nav pull-right" style="display: none;">

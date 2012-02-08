@@ -23,4 +23,17 @@
             </div>
         </div>
     </div>
+
+    <!--
+        RequireJS initialisation
+        jQuery and Underscore are loaded by default
+    -->
+    <script src="/assets/javascripts/lib/require.js"></script>
+    <script>
+        require({
+            baseUrl: '/assets/javascripts/',
+            priority: ['lib/jquery',
+                       'lib/underscore']
+        }, ['main_search.min']);
+    </script>
 }
