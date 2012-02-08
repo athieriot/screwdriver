@@ -50,6 +50,11 @@ Todo:
    - design
    - buy a cool domain name
 
+Heroku Note:
+
+   - heroku config:add GITHUB_CLIEND_ID=""
+   - heroku config:add GITHUB_CLIEND_SECRET=""
+
 Tech:
 
    - Play 2.0
