@@ -1,7 +1,15 @@
 {{#each user_repos}}
-    <li>{{name}}</li>
+    <li>
+        {{name}}
 
-
-"private": false,
-"fork": false,
+        {{#if fork}}
+        <span class="label label-success">Fork</span>
+        {{/if}}
+        {{#if private}}
+        <span class="label label-important">Private</span>
+        {{/if}}
+        {{#if open_issues}}
+        <span class="label label-info">Issues: {{open_issues}}</span>
+        {{/if}}
+    </li>
 {{/each}}
