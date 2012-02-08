@@ -1,4 +1,4 @@
-@(title: Html)(content: Html)
+@(mainjs: String)(title: Html)(content: Html)
 
 <!DOCTYPE html>
 
@@ -9,9 +9,22 @@
         <meta name="description" content="">
         <meta name="author" content="Aurélien Thieriot">
 
+        <!--
+            RequireJS initialisation
+            jQuery and Underscore are loaded by default
+        -->
+        <script src="/assets/javascripts/lib/require.js"></script>
+        <script>
+            require({
+                baseUrl: '/assets/javascripts/',
+                priority: ['lib/jquery',
+                    'lib/underscore']
+            }, ['@mainjs']);
+        </script>
         <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
         <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+
         <![endif]-->
         <!-- Le styles -->
         <link media="screen" href="/assets/stylesheets/main.css" rel="stylesheet">

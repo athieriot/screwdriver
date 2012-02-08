@@ -1,28 +1,15 @@
-@main {
-Your Projects
+@main(mainjs = "main_space.min") {
+    Your Projects
 } {
     <div class="row">
         <div class="span12">
             <div row>
                 <div class="left-column span6">
-                    <ul id="projects"></ul>
+                    <ul id="user_repos"></ul>
                 </div>
                 <div class="right-column span6">
                 </div>
             </div>
         </div>
     </div>
-
-    <!--
-        RequireJS initialisation
-        jQuery and Underscore are loaded by default
-    -->
-    <script src="/assets/javascripts/lib/require.js"></script>
-    <script>
-        require({
-            baseUrl: '/assets/javascripts/',
-            priority: ['lib/jquery',
-                       'lib/underscore']
-        }, ['main_space.min']);
-    </script>
 }

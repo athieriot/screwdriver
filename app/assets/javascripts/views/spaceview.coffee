@@ -1,6 +1,6 @@
-define ['text!templates/repos.html', \
+define ['text!templates/user_repos.html', \
         'lib/backbone', \
-        'lib/handlebars'], (repos) ->
+        'lib/handlebars'], (user_repos) ->
            Backbone.View.extend
               el: $('#space')
               
@@ -11,15 +11,14 @@ define ['text!templates/repos.html', \
               getRepos: ->
                 $.ajax {
                   url: "/user_repos",
-                  success: (user_repos) =>
-                    @render(user_repos)
+                  success: (repos) =>
+                    @render(repos)
                 }
               
               render: (result) ->
-                result = {"repos": result}
-
-                compile_template = Handlebars.compile(repos)
-                content = compile_template(result)
+                #TODO: Extract this way of HandleBar in a utilty function
+                compile_template = Handlebars.compile(user_repos)
+                content = compile_template({"user_repos": result})
                  
-                $(@el.id + ', #projects').html(content)
+                $(@el.id + ', #user_repos').html(content)
                 @
