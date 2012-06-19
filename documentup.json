@@ -1,0 +1,9 @@
+{
+   repo:  "athieriot/screwdriver",
+   "name": "Screwdriver", 
+   "twitter": "a_thieriot",
+   issues: true,
+   travis: true,
+   google_analytics: "UA-32784211-1"
+
+}
