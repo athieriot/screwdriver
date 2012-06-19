@@ -1,65 +1,18 @@
 Goal:
 
+   Linking people to open source a world of ideas by providing a modern alternative to projects like openhatch.org and www.ohloh.net.
+
    Screwdriver is my excuse to learn some new technologies !
-   So the purpose will evolve at my will ... maybe ;)
 
-   So, I do not have a lot of ideas and I bet that I'm not the only one.
-   Why not spend a small amount of my time writing tools to help guys to find ideas to work on.
-   And maybe the opposite can help too. What if some guys have a lot of ideas and are not able to implement them !
+Details:
 
-   In the past. Another idea : 
-   --Today, at the menu, I try to learn Bépo keyboard layout and I fall in love with games like ZType.--
-   --Provide a web app to link together people who have ideas and people who doesn't.--
-   --Most like Google Summer of Code than real job.--
+   Trello board -> https://trello.com/board/screwdriver/4f1aeba51c63d0f25b012713
+   Deployed version -> http://screwdriver.herokuapp.com/
 
-Rules:
+Commands:
 
-   - The idea to help create project is good but I wanted to help writing code
-   - Why not be able to add some issues/bugs/ideas and give a note
-   - The note has to be about complexity
+   Launch the project -> play run
+   Launch tests -> play test
+   Push modification -> ./push
+   Deploying -> ./deploy
 
-   - Like that, anyone can see if he can help
-   - Or if is project will be challenging
-
-   - I can also build a command line tool that help bootstrap issue fixing
-
-Todo:
-
-   My Trello board is available here : https://trello.com/b/wudEt9aY
-
-   Features :
-
-   - --Find repos on Github--
-   - --Find people on Github--
-   - --Connexion with a Github account--
-   - Add the issues of a project in the account
-   - Note on level of issues
-   - Link between the owner of a repo and a driver
-   - Why not a single input
-   - Taking Gist in account
-   - Start thinking about a better research (smarter like index descriptions and skills, add google code, bitbucket, selection of the user)
-   - function of the project language, propose some reading or procs
-   - Start thinking of a command line tool to help boostraping app or issues
-   - Warning: Dont want to write a JIRA like site or eaven a trello
-   - Linked in of drivers?
-
-   General: 
-   
-   - Write an introduction for the site
-   - Do a poll about the general idea and made a link in the site
-   - design
-   - buy a cool domain name
-
-Heroku Note:
-
-   - heroku config:add GITHUB_CLIEND_ID=""
-   - heroku config:add GITHUB_CLIEND_SECRET=""
-
-Tech:
-
-   - Play 2.0
-   - Twitter bootstrap 2.0
-   - MongoDB/Elasticsearch
-   - Nginx
-   - HTML5
-   - Backbone/requirejs/handlebars
