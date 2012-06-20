@@ -27,6 +27,7 @@ project/plugins/project/
 .scala_dependencies
 
 # IntelliJ
+out/
 *.iml
 *.ipr
 *.iws
