@@ -9,9 +9,9 @@ before_script:
    - export PHANTOMJS_EXECUTABLE='phantomjs --local-to-remote-url-access=yes --ignore-ssl-errors=yes'
    - export DISPLAY=:99.0
    - sh -e /etc/init.d/xvfb start
-   - play-${PLAY_VERSION} start
+   - play-${PLAY_VERSION}/play start
 script:
    - play-${PLAY_VERSION}/play test
    - DISPLAY=:99.0 ./tools/casperjs/bin/casperjs test ./test/casper/
 after_script:
-   - play-${PLAY_VERSION} stop
+   - play-${PLAY_VERSION}/play stop
