@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./tools/casperjs/bin/casperjs test ./test/casper/
