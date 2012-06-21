@@ -13,12 +13,15 @@ debug:
 	play debug
 
 start:
-	play start
+	nohup play start
 
 stop:
 	play stop
 
 run:
 	play run
+
+deploy:
+	git push heroku master
 
 .PHONY: test
