@@ -12,14 +12,20 @@ integ:
 debug:
 	play debug
 
-start:
-	nohup play start
+stage:
+	play stage
+
+start: stage
+	nohup target/start &
 
 stop:
 	play stop
 
 run:
 	play run
+
+clean:
+	play clean
 
 deploy:
 	git push heroku master
