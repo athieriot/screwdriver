@@ -38,7 +38,7 @@ rm -Rf ../privatebuild
 git clone -slb "${BRANCH}" . ../privatebuild --recursive
 cd ../privatebuild
 
-play test
+make start && make tests || make stop
 BUILD_RESULT=$?
 
 if [ "$1" == "no-push" ]; then

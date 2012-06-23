@@ -1,4 +1,4 @@
-all: unit integ
+tests: unit integ
 
 unit:
 	play test
@@ -27,7 +27,8 @@ run:
 clean:
 	play clean
 
+push: 
+	./push
+
 deploy:
 	git push heroku master
-
-.PHONY: test

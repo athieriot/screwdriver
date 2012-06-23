@@ -2,7 +2,7 @@ import org.specs2.mutable.Specification
 import play.api.test.Helpers._
 import models._
 
-class DatabaseTest extends Specification with Connection {
+class DatabaseTest extends Specification with EmbeddedConnection {
 
   "Database" should {
     "be able to save a Project" in {

@@ -12,6 +12,6 @@ before_script:
    - sh -e /etc/init.d/xvfb start
    - make start
 script:
-   - DISPLAY=:99.0 make all
+   - DISPLAY=:99.0 make tests
 after_script:
    - make stop
