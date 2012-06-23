@@ -7,11 +7,5 @@ before_script:
    - wget http://download.playframework.org/releases/play-${PLAY_VERSION}.zip
    - unzip -q play-${PLAY_VERSION}.zip 
    - export PATH=$PATH:play-${PLAY_VERSION}
-   - export PHANTOMJS_EXECUTABLE='phantomjs --local-to-remote-url-access=yes --ignore-ssl-errors=yes'
-   - export DISPLAY=:99.0
-   - sh -e /etc/init.d/xvfb start
-   - make start
 script:
-   - DISPLAY=:99.0 make tests
-after_script:
-   - make stop
+   - make unit

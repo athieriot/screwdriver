@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#Prepare Frisby
+npm install frisby jasmine-node
+
+#Launch full test suite
+make start && make tests || make stop

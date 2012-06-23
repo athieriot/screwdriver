@@ -32,3 +32,9 @@ out/
 *.ipr
 *.iws
 .idea/
+
+#node!
+node_modules/
+
+#System
+nohup.out

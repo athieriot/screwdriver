@@ -4,7 +4,7 @@ unit:
 	play test
 
 func:
-	./node_modules/.bin/jasmine-node --coffee --verbose ./test/frisby
+	./node_modules/jasmine-node/bin/jasmine-node --coffee --verbose ./test/frisby
 
 integ:
 	./tools/casperjs/bin/casperjs test ./test/casper/
