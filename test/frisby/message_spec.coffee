@@ -1,4 +1,4 @@
-frisby = require '../../tools/frisby/lib/frisby.js'
+frisby = require 'frisby.js'
 
 frisby.create('Get a simple message')
    .get('http://localhost:9000/message')

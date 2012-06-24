@@ -8,4 +8,4 @@ before_script:
    - unzip -q play-${PLAY_VERSION}.zip 
    - export PATH=$PATH:play-${PLAY_VERSION}
 script:
-   - make unit
+   - play test
