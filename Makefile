@@ -1,4 +1,4 @@
-tests: unit integ
+tests: unit func integ
 
 unit:
 	play test
