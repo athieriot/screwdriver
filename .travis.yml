@@ -11,7 +11,7 @@ before_script:
    - export DISPLAY=:99.0
    - sh -e /etc/init.d/xvfb start
    - play stage
-   - target/start
+   - target/start &
 script:
    - play test
    - DISPLAY=:99.0 ./tools/casperjs/bin/casperjs test ./test/casper/
