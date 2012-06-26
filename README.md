@@ -9,7 +9,7 @@ Details:
    Trello board -> https://trello.com/board/screwdriver/4f1aeba51c63d0f25b012713
    Deployed version -> http://screwdriver.herokuapp.com/
 
-   [![Build Status](https://buildhive.cloudbees.com/job/athieriot/job/screwdriver/badge/icon)](https://buildhive.cloudbees.com/job/athieriot/job/screwdriver/)
+   [![Build Status](https://secure.travis-ci.org/athieriot/screwdriver.png)](http://travis-ci.org/athieriot/screwdriver)
 
 Commands:
 
