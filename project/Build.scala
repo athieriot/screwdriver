@@ -9,10 +9,10 @@ object ApplicationBuild extends Build {
 
     val appDependencies = Seq(
       /*Database access*/
-      "se.radley" %% "play-plugins-salat" % "1.0.4",
+      "se.radley" %% "play-plugins-salat" % "1.0.5",
 
       /*Test*/
-      "de.flapdoodle.embedmongo" % "de.flapdoodle.embedmongo" % "1.16" % "test",
+      "com.github.athieriot" %% "specs2-embedmongo" % "0.2" % "test",
       //Only to activate the Specs2 mock feature
       "org.mockito" % "mockito-all" % "1.9.0" % "test"
     )
