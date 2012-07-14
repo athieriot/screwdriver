@@ -20,8 +20,12 @@
                         deps: ['lib/jquery.min'],
                         exports: '_'
                     },
-                    'lib/bootstrap.min': ['lib/jquery.min'],
-                    'lib/ember': ['lib/jquery.min']
+                    'lib/ember': {
+                        deps: ['lib/jquery.min'],
+                        exports: 'Ember'
+                    },
+                    'lib/ember-data.min': ['lib/ember'],
+                    'lib/bootstrap.min': ['lib/jquery.min']
                 }
             });
         </script>
