@@ -7,7 +7,7 @@
         <title>@title</title>
         <link rel="stylesheet" media="screen" href="/assets/css/bootstrap.min.css">
         <link rel="stylesheet" media="screen" href="/assets/css/bootstrap-responsive.min.css">
-        <!--link rel="stylesheet" media="screen" href="/assets/css/main.css"-->
+        <link rel="stylesheet" media="screen" href="/assets/css/main.css">
 
         <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.png">
 
@@ -31,6 +31,26 @@
         </script>
     </head>
     <body>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="/">Screwdriver</a>
+                    <form class="navbar-search pull-right">
+                        <input type="text" class="search-query" placeholder="discover">
+                    </form>
+                </div>
+            </div>
+        </div>
+
         @content
+
+        <script type="text/javascript">
+            var uvOptions = {};
+            (function() {
+                var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+                uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/yYbzmlZ3g9rnLvSG9KhHQ.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+            })();
+        </script>
     </body>
 </html>

@@ -1,0 +1,5 @@
+#project-container { padding-top: 42px; }
+#project-container .details { margin-right: -50px; }
+#project-container .details div dl dt, dd { line-height: 180%; }
+
+.container .brand { left: 50%; margin-left: 490px; font-size: 1.8em; }
