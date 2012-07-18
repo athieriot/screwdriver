@@ -2,9 +2,16 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
         <title>@title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
         <link rel="stylesheet" media="screen" href="/assets/css/bootstrap.min.css">
         <link rel="stylesheet" media="screen" href="/assets/css/bootstrap-responsive.min.css">
         <link rel="stylesheet" media="screen" href="/assets/css/main.css">
@@ -34,10 +41,16 @@
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
-                    <a class="brand" href="/">Screwdriver</a>
-                    <form class="navbar-search pull-right">
-                        <input type="text" class="search-query" placeholder="discover">
-                    </form>
+                    <div class="row">
+                        <div class="span1 offset5">
+                            <a class="brand" href="/">Screwdriver</a>
+                        </div>
+                        <div class="span1 offset5">
+                            <form class="navbar-search pull-right">
+                                <input type="text" class="search-query" placeholder="discover">
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
